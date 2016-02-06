@@ -21,13 +21,13 @@ build:
     - echo $PATH
     - reports --help
     - node --version
-    - mkdir -p shippable/testresults
+    - mkdir -p shippabletest/testresults
     - mkdir -p shippable/codecoverage
     - npm install
     - ./node_modules/.bin/istanbul cover grunt -- -u tdd
-    - ./node_modules/.bin/istanbul report cobertura --dir  shippable/codecoverage/
-    - cat shippable/codecoverage/cobertura-coverage.xml
-    - export XUNIT_FILE=shippable/testresults/result.xml
+    - ./node_modules/.bin/istanbul report cobertura --dir  shippabletest/codecoverage/
+    - cat shippabletest/codecoverage/cobertura-coverage.xml
+    - export XUNIT_FILE=shippabletest/testresults/result.xml
     - grunt
 
 
