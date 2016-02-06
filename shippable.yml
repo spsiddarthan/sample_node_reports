@@ -42,6 +42,7 @@ integrations:
       branches:
         only:
           - master
+          - test-reports
 notifications:
     - integrationName: email
       type: email
