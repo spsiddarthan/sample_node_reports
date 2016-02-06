@@ -50,10 +50,7 @@ notifications:
       recipients: 
         - shiphitchcock2@gmail.com
         - vidya@shippable.com
-      branches:
-        only:
-         - master
-         - test-reports
+      
       on_pull_request: always
       on_start: always
       on_success: always
@@ -64,10 +61,7 @@ notifications:
       recipients: 
         - "#hitchcock1-public"
         - pvt-channel
-      branches:
-        only:
-         - master
-         - test-reports
+      
       on_start: always
       on_pull_request: always
       on_success: always
@@ -78,10 +72,7 @@ notifications:
       recipients: 
         - "chat.freenode.net#test-cock"
         - "chat.freenode.net#hitchcok2-irc"
-      branches:
-        only:
-         - master
-         - test-reports
+      
       on_start: always
       on_pull_request: always
       on_success: always
