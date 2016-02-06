@@ -15,18 +15,21 @@ env:
 build:
   cache: true
   
-  pre_ci:
-    - docker build -t=shippabledocker/sample_node .
-
-  pre_ci_boot:
-    image_name: shippabledocker/sample_node
-    image_tag: latest
-    pull: false
-    options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
-
   ci:
-    - ps -eax
-    - ls -al
+    - echo "Hello, World!"
+    - env
+    - echo $PATH
+    - reports --help
+    - node --version
+    - mkdir -p shippable/testresults
+    - mkdir -p shippable/codecoverage
+    - npm install
+    - ./node_modules/.bin/istanbul cover grunt -- -u tdd
+    - ./node_modules/.bin/istanbul report cobertura --dir  shippable/codecoverage/
+    - cat shippable/codecoverage/cobertura-coverage.xml
+    - export XUNIT_FILE=shippable/testresults/result.xml
+    - grunt
+
 
   post_ci:
     - docker push shippabledocker/sample_node
