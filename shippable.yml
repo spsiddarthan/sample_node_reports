@@ -13,6 +13,8 @@ env:
     - M1=ONE
 
 build:
+  cache: true
+  
   pre_ci:
     - docker build -t=shippabledocker/sample_node .
 
