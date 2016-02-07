@@ -44,7 +44,7 @@ integrations:
         only:
           - master
           - test-reports
-notifications:
+  notifications:
     - integrationName: email
       type: email
       recipients: 
