@@ -4,6 +4,7 @@ language: node_js
 # Version number
 node_js:
   - 0.12
+  - 5.0
 
 
 env:
@@ -31,7 +32,7 @@ build:
     - export XUNIT_FILE=shippable/testresults/result.xml
     - grunt
    # - cat shippable/codecoverage/coberturatest-coverage.xml
-    - sleep 5700s
+    #- sleep 5700s
 
 
   post_ci:
