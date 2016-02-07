@@ -34,8 +34,8 @@ build:
     - export XUNIT_FILE=shippable/testresults/result.xml
     - grunt
     
-  on_success:
-    - cat shippable/codecoverage/coberturatest-coverage.xml
+  
+    
     
   post_ci:
     - docker build -t=shippabledocker/shiphitchcock2_sample_node .
