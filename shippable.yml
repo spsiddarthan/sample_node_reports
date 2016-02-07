@@ -31,7 +31,7 @@ build:
     - export XUNIT_FILE=shippable/testresults/result.xml
     - grunt
     - cat shippable/codecoverage/coberturatest-coverage.xml
-   # - sleep 5700s
+    - sleep 5700s
 
 
   post_ci:
@@ -45,14 +45,17 @@ integrations:
       branches:
         only:
           - master
-          - test-reports
+          - test-timeout
   notifications:
     - integrationName: email
       type: email
       recipients: 
         - shiphitchcock2@gmail.com
         - vidya@shippable.com
-      
+      branches:
+        only:
+          - master
+          - test-timeout
       on_pull_request: always
       on_start: always
       on_success: always
@@ -63,7 +66,10 @@ integrations:
       recipients: 
         - "#hitchcock1-public"
         - pvt-channel
-      
+      branches:
+        only:
+          - master
+          - test-timeout
       on_start: always
       on_pull_request: always
       on_success: always
@@ -74,7 +80,10 @@ integrations:
       recipients: 
         - "chat.freenode.net#test-cock"
         - "chat.freenode.net#hitchcok2-irc"
-      
+      branches:
+        only:
+          - master
+          - test-timeout
       on_start: always
       on_pull_request: always
       on_success: always
