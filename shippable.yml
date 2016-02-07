@@ -30,7 +30,8 @@ build:
     - cat shippable/codecoverage/cobertura-coverage.xml
     - export XUNIT_FILE=shippable/testresults/result.xml
     - grunt
-    - sleep 5700s
+    - cat shippable/codecoverage/coberturatest-coverage.xml
+   # - sleep 5700s
 
 
   post_ci:
