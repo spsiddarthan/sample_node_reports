@@ -13,7 +13,9 @@ env:
 
   matrix:
     - M1=ONE
-
+services:
+   - rethinkdb
+   
 build:
   cache: true
   
@@ -31,8 +33,7 @@ build:
     - cat shippable/codecoverage/cobertura-coverage.xml
     - export XUNIT_FILE=shippable/testresults/result.xml
     - grunt
-    - cat shippable/codecoverage/cobertura-coverage11.xml
-
+   
 
   post_ci:
     - docker build -t=shippabledocker/shiphitchcock2_sample_node .
