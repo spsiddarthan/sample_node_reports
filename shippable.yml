@@ -13,9 +13,7 @@ env:
 
   matrix:
     - M1=ONE
-services:
-   - rethinkdb
-   
+
 build:
   cache: true
   
