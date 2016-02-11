@@ -15,21 +15,21 @@ env:
 build:
   cache: true
   
-  pre_ci:
-    - docker build -t=shippabledocker/sample_node .
+  #pre_ci:
+   # - docker build -t=shippabledocker/sample_node .
 
   pre_ci_boot:
     image_name: shippabledocker/sample_node
     image_tag: latest
-    pull: false
+    pull: true
     options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
 
   ci:
     - ps -eax
     - ls -al
 
-  post_ci:
-    - docker push shippabledocker/sample_node
+  #post_ci:
+   # - docker push shippabledocker/sample_node
 
 integrations:
   hub:
