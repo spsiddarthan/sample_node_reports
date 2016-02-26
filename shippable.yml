@@ -5,7 +5,7 @@ language: node_js
 # Version number
 node_js:
   - 0.12
-  - 5.0
+  #- 5.0
 
 
 archive: true
@@ -14,9 +14,7 @@ env:
   global:
     - FOO=FUBU
 
-  matrix:
-    - M1=ONE
-    - m2=two
+ 
 
 build:
   cache: true
@@ -35,7 +33,7 @@ build:
     - cat shippable/codecoverage/cobertura-coverage.xml
     - export XUNIT_FILE=shippable/testresults/result.xml
     - grunt
-    - cat shippable/codecoverage/cobertura-coverage11.xml
+  #  - cat shippable/codecoverage/cobertura-coverage11.xml
  
  
     
