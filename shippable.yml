@@ -35,20 +35,12 @@ build:
     - cat shippable/codecoverage/cobertura-coverage.xml
     - export XUNIT_FILE=shippable/testresults/result.xml
     - grunt
-   # - cat shippable/codecoverage/cobertura-coverage11.xml
+    - cat shippable/codecoverage/cobertura-coverage11.xml
  
-  post_ci:
-    - docker build -t=shippabledocker/shiphitchcock2_sample_node .
-    - docker push shippabledocker/shiphitchcock2_sample_node
+ 
     
 integrations:
-  hub:
-    - integrationName: ship-docker
-      type: docker
-      branches:
-        only:
-          - master
-          - test-reports
+  
   notifications:
     - integrationName: email
       type: email
