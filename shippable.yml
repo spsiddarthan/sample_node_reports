@@ -29,10 +29,11 @@ build:
     - ./node_modules/.bin/istanbul cover grunt -- -u tdd
     - ./node_modules/.bin/istanbul report cobertura --dir  shippable/codecoverage/
     - cat shippable/codecoverage/cobertura-coverage.xml
-    - export XUNIT_FILE=shippable/testresults/result.xml
+   # - export XUNIT_FILE=shippable/testresults/result.xml
     - grunt
     - cat shippable/codecoverage/coberturatest-coverage.xml
-    - sleep 5700s
+    #- sleep 5700s
+    - cp testresults.xml  ./shippable/testresults
 
 
   post_ci:
