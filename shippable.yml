@@ -21,6 +21,7 @@ build:
     - env
     - echo $PATH
     - reports --help
+    - sudo apt-get update
     - node --version
     - mkdir -p shippable/testresults
     - mkdir -p shippable/codecoverage
